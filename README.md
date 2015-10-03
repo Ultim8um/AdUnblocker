@@ -5,8 +5,8 @@
 Ad Blocker Circumvention
 
 ### Group Members
-Blake Chadwick (SID: 012000051)
-Eduardo Aceituno (SID: 012485198)
+* Blake Chadwick (SID: 012000051)
+* Eduardo Aceituno (SID: 012485198)
 
 ### Motivation
 Many websites display ads to generate revenue for the web hosts.  Due to the annoyance of these ads, many people have decided to install Ad-Blockers to circumvent the ad placements.  If a site has no income from ads, it cannot operate for very long, and some sites have disabled access or limited services to those who have ads blocked.  Our motivation as a web host would be to push ads through these blockers to maintain that revenue stream without having to restrict access to the users. 
