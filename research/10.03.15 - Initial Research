@@ -1,0 +1,28 @@
+Third-Party Research
+====================
+1. cyberlaw.stanford.edu/blog/2011/09/tracking-trackers-self-help-tools
+2. en.wikipedia.org/wiki/Ad_blocking
+3. http://www.buzzfeed.com/alexkantrowitz/the-technology-solution-to-ad-blocking-nobodys-talking-about
+4. http://recode.net/2015/06/18/ad-tech-vet-ben-barokas-launches-sourcepoint-to-block-ad-blockers
+5. http://www.businessinsider.com/former-google-exec-launches-sourcepoint-with-10-million-series-a-funding-2015-6
+
+Third-Party Solutions
+=====================
+1. http://sourcepoint.com/
+2. https://pagefair.com/
+
+Resources
+=========
+1. https://github.com/samyk/evercookie (For tracking purposes)
+2. https://github.com/adblockplus/adblockplus (extension for Firefox and other Gecko-based browsers)
+3. https://github.com/adblockplus/adblockpluschrome (extension for Google Chrome)
+
+Tools
+=====
+1. https://github.com/sitexw/BlockAdBlock (To detect Adblock)
+2. https://github.com/sitexw/FuckAdBlock (To detect Adblock)
+
+Node.js Packages
+================
+1. https://www.npmjs.com/package/fuckadblock
+2. https://github.com/truongsinh/node-evercookie
