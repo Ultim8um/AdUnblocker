@@ -20,10 +20,22 @@ We need to analyze popular ad blockers to figure out their methods.  Once we hav
 Since our target is web-based, our program should be supported by all browsers on all platforms.  We will be using javascript for our entire stack, which will help with our universal implementation.  We will be using Node.js with Express.js to help reach our goals.  Any hardware that is capable of accessing the internet with a web browser with javascript capabilities should be supported. 
 
 
-### Timeline:
+### Timeline
 * Sept 23	- Research AdBlockers, cookies, etc.
 * Oct 7		- Planning, requirements modeling
 * Oct 28	- Experimentation, implementation
 * Nov 4		- Testing / Debugging
 * Nov 18	- Refinement
 * (End)		- Final preparations, documentation, presentation composition
+
+### Instructions
+1. Create a directory on your local machine
+2. Clone the AdUnblocker repository in your newly created folder using **Git Bash**
+```git
+git clone https://github.com/Ultim8um/AdUnblocker.git
+```
+3. Run following commands to setup and run project from **Node.js Command Prompt**
+```npm
+npm install // install dependencies
+node app.js // start server
+```
