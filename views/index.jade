@@ -1,0 +1,29 @@
+doctype html
+html(lang='eng')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title='AdUnblocker'
+    // Bootstrap
+    link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
+  body
+    h1(class='page-header text-center') AdUnblocker Test
+    .container
+      .row
+         .col-md-4.col-sm-6.col-xs-12
+           h3(class='text-center') Normal image
+           img(src='images/ad.jpg', class='img-thumbnail')
+         .col-md-4.col-sm-6.col-xs-12
+           h3(class='text-center') Encoded image
+           img(src='data:image/jpeg;base64,#{src}', class='img-thumbnail')
+         .col-md-4.col-sm-6.col-xs-12
+           h3(class='text-center') Random image (TODO)
+           img(src='images/ad.jpg', class='img-thumbnail')
+    // TODO
+    //script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js')
+    //script(type='text/javascript').
+      //$(document).ready(function() {
+        //var encoded_image = btoa('images/owned.jpg');
+        //$('#base64').attr('src', 'data:image/jpeg;charset=utf-8;base64,' + encoded_image);
+      //});
