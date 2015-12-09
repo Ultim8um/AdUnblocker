@@ -24,22 +24,22 @@ html(lang='eng')
       h4 {
         padding: 15px;
       }
-  body
+  body#statsCtrl(ng-app='adUnblockerApp', ng-controller='statsCtrl')
     h1(class='page-header text-center') AdUnblocker Test
     .container
       .row
          .col-md-3.col-sm-6.col-xs-12
            h3(class='text-center') Normal image
-           img#normal-img(src='images/ad.jpg')
+           img#normal-img(src='images/ad.jpg', data-id='Normal Image')
          .col-md-3.col-sm-6.col-xs-12
            h3(class='text-center') Base64 Encoded image
-           img(src='data:image/jpeg;base64,#{encoded_img}', data-id='encoded-img')
+           img(src='data:image/jpeg;base64,#{encoded_img}', data-id='Encoded Image')
          .col-md-3.col-sm-6.col-xs-12
            h3(class='text-center') Random image
-           img(src='images/#{random_img}', data-id='random-img')
+           img(src='images/#{random_img}', data-id='Random Image')
          .col-md-3.col-sm-6.col-xs-12
            h3(class='text-center') Random directory + image
-           img(src='#{random_dir}', data-id='random-dir')
+           img(src='#{random_dir}', data-id='Random Directory')
       .row
          .col-xs-12
            h3(class='text-center') Status &amp; Statistics
@@ -52,30 +52,32 @@ html(lang='eng')
                  th Image Type
                  th Revenue (0.10&#162; per view)
              tbody
-               tr
-                 td 1
-                 td Normal
-                 td $0.00
-               tr
-                 td 2
-                 td Encoded
-                 td $0.00
-               tr
-                 td 3
-                 td Random
-                 td $0.00
-               tr
-                 td 4
-                 td Random Directory
-                 td $0.00
-    script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js')    
+               tr(ng-repeat='stat in stats')
+                 td {{ $index + 1 }}
+                 td {{ stat.id }}
+                 td {{ stat.amount | currency }}
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js')
+    script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js')
+    script(src='js/statsCtrl.js')
     script(type='text/javascript').
         $(document).ready(function() {
-            if($('#normal-img').css('display') == 'none') {
+            if($('#normal-img').is(':hidden') == true) {
                 $('#adblock-enabled').show();
                 $('#adblock-not-enabled').hide();
             } else {
                 $('#adblock-enabled').hide();
                 $('#adblock-not-enabled').show();
             }
+        });
+        // Run after all assets have been loaded
+        $(window).load(function() {            
+            // Array of ids
+            var ids = [];
+            // Grab all visible elements            
+            var elements = $('[data-id]:visible');
+            elements.each(function(e){
+                ids.push($(this).data('id'));
+            });
+            // Update stats
+            angular.element('#statsCtrl').scope().updateStats(ids);
         });

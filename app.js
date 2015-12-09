@@ -3,6 +3,7 @@ var express =  require('express');
 var fs = require('fs');
 var path = require('path');
 var tmp = require('tmp');
+var bodyParser = require('body-parser');
 
 // Initialize express app
 var app = express();
@@ -16,7 +17,13 @@ app.set('view engine', 'jade');
 // Set assets folder
 app.use(express.static('public'));
 
-// Home route
+// For parsing application/json
+app.use(bodyParser.json());
+
+// For parsing application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// Home route for GET Request
 app.get('/', function(req, res) {    
     fs.readFile(path.join(__dirname, 'public/images/ad.jpg'), function (err, data) {
         if (err) throw err;
@@ -46,6 +53,14 @@ app.get('/', function(req, res) {
             random_dir: randDir
         });
     });    
+});
+
+// Home route for POST Request
+app.post('/', function(req, res) {
+    fs.writeFile(path.join(__dirname, 'public/data/stats.json'), JSON.stringify(req.body, null, 2), function (err) {
+        if (err) throw err;
+    });
+    res.end();
 });
 
 // Listen on http://localhost:3000
